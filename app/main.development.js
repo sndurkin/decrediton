@@ -303,7 +303,7 @@ const launchDCRD = () => {
   if (os.platform() == "win32") {
     try {
       const util = require("util");
-      const win32ipc = require("./node_modules/win32ipc/build/Release/win32ipc");
+      const win32ipc = require("./node_modules/win32ipc/build/Release/win32ipc.node");
       var pipe = win32ipc.createPipe("out");
       args.push(util.format("--piperx=%d", pipe.readEnd));
       dcrdExe = dcrdExe + ".exe";
@@ -360,7 +360,7 @@ const launchDCRWallet = () => {
   if (os.platform() == "win32") {
     try {
       const util = require("util");
-      const win32ipc = require("./node_modules/win32ipc/build/Release/win32ipc");
+      const win32ipc = require("./node_modules/win32ipc/build/Release/win32ipc.node");
       var pipe = win32ipc.createPipe("out");
       args.push(util.format("--piperx=%d", pipe.readEnd));
       dcrwExe = dcrwExe + ".exe";

@@ -33,7 +33,10 @@ export default {
     }, {
       test: /\.node$/,
       use: [{
-        loader: "node-loader"
+        loader: "node-addon-loader",
+        options: {
+          basePath: path.resolve(__dirname)
+        }
       }]
     },]
   },
